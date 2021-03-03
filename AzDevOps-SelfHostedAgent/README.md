@@ -387,4 +387,5 @@ For monitoring, we have example of checking the status of the agent service. Thi
 
 - [DSC Configuration.](./SelfHostedAgent.ps1)
 - [Deployment Commands.](./AzureDeploy.ps1)
+- [Sample Build Pipeline.](./azure-pipelines.yml)
 - [Sample .NET Solution.](./ConsotoApplication)
