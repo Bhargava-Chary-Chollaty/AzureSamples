@@ -5,7 +5,8 @@ $DevOpsPAT = '<DevOpsPersonalAccessToken>'
 # Azure Resource Variables
 $AutomationName = '<AutomationName>'
 $AutomationResourceGroup = '<AutomationResourceGroup>'
-$AzureVMName = '<AzureVMName>'
+$DotNetAgentVMName = '<DotNetAgentVMName>'
+$NodeJsAgentVMName = '<NodeJsAgentVMName>'
 $AzureVMResourceGroup = '<AzureVMResourceGroup>'
 $AzureVMLocation = '<AzureVMLocation>'
 
@@ -59,10 +60,24 @@ Get-AzAutomationDscNodeConfiguration -ResourceGroupName $AutomationResourceGroup
 # Onboard the node to Automation DSC
 Register-AzAutomationDscNode -ResourceGroupName $AutomationResourceGroup `
     -AutomationAccountName $AutomationName `
-    -AzureVMName $AzureVMName `
+    -AzureVMName $DotNetAgentVMName `
     -AzureVMResourceGroup $AzureVMResourceGroup `
     -AzureVMLocation $AzureVMLocation `
     -NodeConfigurationName 'SelfHostedAgent.BuildAgents.DotNetAgent' `
     -ConfigurationMode 'ApplyAndMonitor' `
     -ConfigurationModeFrequencyMins  15 `
-    -RefreshFrequencyMins 30
+    -RefreshFrequencyMins 30 `
+    -RebootNodeIfNeeded $true
+
+
+# Onboard the node to Automation DSC
+Register-AzAutomationDscNode -ResourceGroupName $AutomationResourceGroup `
+    -AutomationAccountName $AutomationName `
+    -AzureVMName $NodeJsAgentVMName `
+    -AzureVMResourceGroup $AzureVMResourceGroup `
+    -AzureVMLocation $AzureVMLocation `
+    -NodeConfigurationName 'SelfHostedAgent.BuildAgents.NodeJsAgent' `
+    -ConfigurationMode 'ApplyAndMonitor' `
+    -ConfigurationModeFrequencyMins  15 `
+    -RefreshFrequencyMins 30 `
+    -RebootNodeIfNeeded $true

@@ -35,7 +35,7 @@ Configuration SelfHostedAgent
             Name = 'Microsoft .NET Framework 4.7.2 Targeting Pack'
             Path = 'https://aka.ms/vs/16/release/vs_buildtools.exe'
             ProductId = '1784A8CD-F7FE-47E2-A87D-1F31E7242D0D'
-            Arguments = '--add Microsoft.VisualStudio.Workload.AzureBuildTools --installPath C:\BuildTools --wait --quiet --norestart'
+            Arguments = '--add Microsoft.VisualStudio.Workload.AzureBuildTools --includeRecommended --installPath C:\BuildTools --wait --quiet --norestart'
             Ensure = 'Present'
         }
 
@@ -72,7 +72,13 @@ Configuration SelfHostedAgent
                     return $false
                 }
 
-                # Check if the agent is directory exists and Agent is configured.
+                # Check if the agent directory exists but Agent is configured.
+                if ((Test-Path $using:agentDirectoryPath) -and -not (Test-Path $using:agentConfigPath)) {
+                    Write-Verbose 'Agent directory exists but the agent is not configured.'
+                    return $false
+                }
+
+                # Check if the agent directory exists and Agent is configured.
                 if ((Test-Path $using:agentDirectoryPath) -and (Test-Path $using:agentConfigPath)) {
                     Write-Verbose 'Agent directory exists and the agent is already configured.'
                     
