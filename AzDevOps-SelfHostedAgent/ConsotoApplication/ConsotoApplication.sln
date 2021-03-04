@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ConsotoWebApi", "ConsotoWebApi\ConsotoWebApi.vbproj", "{4E8E6386-5658-49D1-916B-EE113F03149B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsotoWebApi", "ConsotoWebApi\ConsotoWebApi.csproj", "{36FFA305-A93A-484B-909C-71198D52E94A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4E8E6386-5658-49D1-916B-EE113F03149B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E8E6386-5658-49D1-916B-EE113F03149B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E8E6386-5658-49D1-916B-EE113F03149B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E8E6386-5658-49D1-916B-EE113F03149B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36FFA305-A93A-484B-909C-71198D52E94A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36FFA305-A93A-484B-909C-71198D52E94A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36FFA305-A93A-484B-909C-71198D52E94A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36FFA305-A93A-484B-909C-71198D52E94A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {72F3AE3D-2786-4EF2-ADBC-CD433BE1F8F6}
+		SolutionGuid = {ED4797BF-F00F-4CC7-A1C6-FFD30D48A525}
 	EndGlobalSection
 EndGlobal
